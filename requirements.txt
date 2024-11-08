@@ -1,2 +1,4 @@
 Flask==2.3.2
 spacy==3.5.1
+numpy==1.21.6
+thinc==8.1.10
