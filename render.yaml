@@ -1,0 +1,15 @@
+# render.yaml
+services:
+  - type: web
+    name: lemmatizer-api
+    env: python
+    runtime: python3
+    region: us  # Cambia in eu se preferisci la regione europea
+    buildCommand: |
+      pip install -r requirements.txt
+      python -m spacy download it_core_news_sm
+    startCommand: python lemmatizer_api.py
+    envVars:
+      - key: PORT
+        value: 5000
+    autoDeploy: true
